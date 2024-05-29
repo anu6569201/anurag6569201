@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "portfolio/wsgi.py",
+        "src": "blogging/wsgi.py",
         "use": "@vercel/python",
         "config": {
           "maxLambdaSize": "15mb",
@@ -24,7 +24,10 @@
       },
       {
         "src": "/(.*)",
-        "dest": "portfolio/wsgi.py"
+        "dest": "blogging/wsgi.py"
       }
-    ]
+    ],
+    "buildCommand": "./build.sh",
+    "installCommand": "apt-get update && apt-get install -y libmysqlclient-dev && pip install -r requirements.txt"
   }
+  
