@@ -10,7 +10,7 @@
         }
       },
       {
-        "src": "build.sh",
+        "src": "install.sh",
         "use": "@vercel/static-build",
         "config": {
           "distDir": "staticfiles_build"
@@ -27,7 +27,7 @@
         "dest": "blogging/wsgi.py"
       }
     ],
-    "buildCommand": "./build.sh",
-    "installCommand": "apt-get update && apt-get install -y libmysqlclient-dev && pip install -r requirements.txt"
+    "installCommand": "apt-get update && apt-get install -y libmysqlclient-dev",
+    "buildCommand": "./install.sh && ./build.sh"
   }
   
